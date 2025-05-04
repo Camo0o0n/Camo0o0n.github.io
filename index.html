@@ -155,14 +155,33 @@
   <p>For this project, the engine was modularly split into key systems that together formed the complete engine: Physics, Audio, Graphics, Text/UI, Build Engineering, Input, File I/O, and Optimisations (including Multi-Threading).</p>
   <p>When the work was distributed, I took ownership of the Rendering system. My prior experience with DirectX 11 made me a good fit for this role, and it also allowed my teammates to focus on their own areas of interest and expertise.</p>
   <p>Throughout the project, I developed valuable skills working with the PlayStation 5's proprietary graphics API. I also collaborated closely with the team to ensure the renderer met the needs of other systems, offering assistance and technical input across different areas — whether by sharing knowledge, providing a fresh perspective, or helping debug through "rubber ducking." Additionally, I was responsible for communicating the renderer’s requirements to other team members, such as the data and structures needed for successful rendering.</p>
-  <p>Write about the actual graphics implementation.</p>
+  <h2>Rendering Pipeline Design</h2>
+<p>To keep rendering simple and efficient, I designed the pipeline around a minimal and consistent interface:</p>
+<ul>
+  <li>Rendering an object only requires providing a <strong>Transform</strong> class (containing position, scale, and rotation) and a colour.</li>
+  <li>Textures are managed through an <strong>ID system</strong>: when a texture is loaded, the renderer returns an integer ID. This allows objects to reference textures without embedding any API-specific code, improving portability and decoupling.</li>
+</ul>
+
+<p>For textured rendering, objects pass a <strong>Texture Data</strong> struct that includes:</p>
+<ul>
+  <li>Texture ID</li>
+  <li>Animation flag (whether it's animated)</li>
+  <li>Frame count and current frame</li>
+  <li>Flip status (for horizontal or vertical flipping)</li>
+</ul>
+
+<p>This structure covers 99% of use cases while keeping the API simple. By including animation data upfront, texture frame selection and manipulation can be handled in the shader using UV manipulation, avoiding bloat on the CPU side.</p>
+
+<p>For more niche cases, such as debugging or custom visuals, a <strong>Draw Line</strong> function is provided, allowing lines to be drawn between any two positions in world space.</p>
+
+  
   <h3>Skills and Experience Gained:</h3>
   <ul>
     <li><strong>PlayStation 5 Graphics API</strong> development</li>
     <li><strong>Cross-team Collaboration</strong> and communication</li>
     <li><strong>DirectX 11</strong> development</li>
-    <li><strong>Problem-solving</strong> and debugging (rubber ducking)</li>
-    <li><strong>Data pipeline design</strong> for rendering systems</li>
+    <li><strong>Problem-solving</strong> and debugging</li>
+    <li><strong>Data pipeline</strong> for rendering systems</li>
   </ul>
 </div>
 
@@ -276,6 +295,9 @@
 </div>
 
 <div id="lowleveDesc" style="display: none;">
+	
+	<a href="https://github.com/Camo0o0n/Low-Level-Optimisations/blob/main/Octree.cpp">Octree</a>
+
     <p>For this Low Level Platform Optimisation project, we were given a framework and had to make it run faster. Here’s what I did:</p>
     <ul>
         <li>I started by researching things like bitwise operations and ways to write more efficient code.</li>
@@ -404,7 +426,7 @@
 	<h1>Game AI</h1>
 	<p>A project focused on implementing game AI techniques. Features include a range of steering behaviors (Seek, Arrive, Flee, Evade, Wander, Collision Avoidance, Separation, Alignment, Cohesion), pathfinding algorithms (Dijkstra, A*, and JPS), and a state machine that enables AI agents to dodge enemies, shoot enemies, and search for health and ammo dynamically.</p>
     <a disabled>Learn More</a>
-    <a href="https://github.com/yourusername/shaderproject" target="_blank">GitHub</a>
+    <a href="https://github.com/Camo0o0n/AI" target="_blank">GitHub</a>
   </div>
   <div class="project-card">
     <iframe src="https://www.youtube.com/embed/sjGtIusZ5WE?si=E-BaGri2nmGCVRWc" frameborder="0" allowfullscreen></iframe>
