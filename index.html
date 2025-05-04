@@ -42,6 +42,7 @@
     .social-links a:hover {
       background-color: #777;
     }
+	
     section {
       padding: 2rem;
     }
@@ -88,20 +89,33 @@
       gap: 1rem;
       margin-top: 1rem;
     }
-    .project-card button, .project-card a {
-      background-color: #333;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 1rem;
-      border-radius: 4px;
-    }
-    .project-card button:hover, .project-card a:hover {
-      background-color: #555;
-    }
+	.project-card button, .project-card a {
+	  background-color: #333;
+	  color: white;
+	  border: none;
+	  padding: 0.5rem 1rem;
+	  cursor: pointer;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 1rem;
+	  border-radius: 4px;
+	}
+
+	.project-card button:hover, .project-card a:hover {
+	  background-color: #555;
+	}
+
+	/* Disable styling for buttons with the 'disabled' attribute */
+	.project-card button[disabled], .project-card a[disabled] {
+	  background-color: #ccc;
+	  color: #777;
+	  cursor: not-allowed;
+	  border: none;
+	}
+
+	.project-card button[disabled]:hover, .project-card a[disabled]:hover {
+	  background-color: #ccc;
+	}
     /* Modal */
     .modal {
       display: none;
@@ -114,16 +128,16 @@
       overflow: auto;
       background-color: rgba(0,0,0,0.7);
     }
-    .modal-content {
-      background-color: #fefefe;
-      margin: 10% auto;
-      padding: 2rem;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 600px;
-      text-align: center;
-      border-radius: 8px;
-    }
+	.modal-content {
+	  background-color: #fefefe;
+	  margin: 5% auto; /* slightly less margin to center vertically */
+	  padding: 2rem;
+	  border: 1px solid #888;
+	  width: 90%; /* make it take more width on smaller screens */
+	  max-width: 900px; /* increased from 600px to 900px */
+	  text-align: center;
+	  border-radius: 8px;
+	}
     .close {
       color: #aaa;
       float: right;
@@ -144,6 +158,7 @@
   <div class="social-links">
     <a href="https://github.com/Camo0o0n" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/cameron-dawes-73034b276/" target="_blank">LinkedIn</a>
+    <a href="https://1drv.ms/w/c/18880600ece13e37/EXUgOovz3PVLvwh8pOQSMQIBWwqlBT8rQe8d3BvtZSM_Hw?e=IFG3cE" target="_blank">CV</a>
   </div>
 </header>
 
@@ -152,52 +167,64 @@
   <ul>
     <li>C++</li>
     <li>C#</li>
+	<li>Computer Graphics</li>
   </ul>
 </section>
 
 <section class="projects">
   <!-- Example Project Card -->
   <div class="project-card">
-    <iframe src="https://www.youtube.com/embed/caICqWbAuPQ?si=_AZKvwmBnn9d64DP" frameborder="0" allowfullscreen></iframe>
-    <h1>Dissertation Project</h1>
-    <p>Description of Dissertation Project</p>
+    <iframe src="" frameborder="0" allowfullscreen></iframe>
+    <h1>Cross-Platform Engine Development (Rendering)</h1>
+	<p>A collaborative project between myself and six others to develop a custom game engine targeting multiple platforms, including PlayStation 5. I was responsible for the engine's rendering backend, implementing support for both DirectX 11 on PC and PlayStation's proprietary graphics API.</p>
     <div class="button-group">
-      <button onclick="openModal('Dissertation Project', 'More details about the dissertation project...')">Learn More</button>
-      <a href="https://github.com/Camo0o0n/Terrain_Generation_Tool" target="_blank">GitHub</a>
+      <button onclick="openModal('Cross-Platform Engine Development (Rendering)', 'More details about the dissertation project...')">Learn More</button>
+      <a disabled>Github</a>
     </div>
 	</div>
 	 <div class="project-card">
     <iframe src="https://www.youtube.com/embed/tHOtdpHtKqs?si=ayKjA3NKisuRfVqb" frameborder="0" allowfullscreen></iframe>
-    <h1>DirectX11 Rendering</h1>
-    <p>Description</p>
-    <button onclick="openModal('Unity Game Demo', 'More details about the Unity game demo...')">Learn More</button>
+	<h1>DirectX 11 Rendering</h1>
+	<p>A graphics rendering project focused on implementing modern rendering techniques using DirectX 11. Features include normal mapping for detailed surface lighting, a deferred rendering pipeline for efficient lighting, and post-processing effects to enhance visual.</p>
+    <button onclick="openModal('DirectX 11 Rendering', 'More details about rendering...')">Learn More</button>
     <a href="https://github.com/yourusername/unitygame" target="_blank">GitHub</a>
   </div>
+    <div class="project-card">
+    <iframe src="https://www.youtube.com/embed/caICqWbAuPQ?si=_AZKvwmBnn9d64DP" frameborder="0" allowfullscreen></iframe>
+	<h1>Dissertation Project: Usability in Terrain Generation Tools</h1>
+	<p>A research project exploring the impact of user feedback on the usability of game development tools. As part of this study, I developed a custom terrain generation tool, which served as the medium for evaluating how usability-focused design and user feedback can improve tool efficiency, learnability, and user satisfaction.</p>
+    <div class="button-group">
+      <button onclick="openModal('Dissertation Project', 'More details about the dissertation project...')">Learn More</button>
+      <a href="https://github.com/Camo0o0n/Terrain_Generation_Tool" target="_blank">GitHub</a>
+      <a href="https://1drv.ms/b/c/18880600ece13e37/EViVBhmBQmxApIx6u-aW-bsBw77rW7QLMNAoemTBnxrs6A?e=qaq8fT" target="_blank">Research Paper</a>
+	  
+    </div>
+	</div>
   <div class="project-card">
     <iframe src="https://www.youtube.com/embed/lmTPDL-mSjw?si=uwldAQIdfqe36nmN" frameborder="0" allowfullscreen></iframe>
     <h1>Low Level Optimisation</h1>
     <p>C++ physics simulation where the challenge was optimising the program to run more objects simultaneously. Used built in visual studio performance tools along with the PS4 Dev tools to identify areas that can be optimised. Use of optimisation techniques such as using Octrees, Bitwise operations, Multi-threading and more.</p>
-    <button onclick="openModal('Low Level Optimisation', 'C++ physics simulation where the challenge was optimising the program to run more objects simultaneously. Used built in visual studio performance tools along with the PS4 Dev tools to identify areas that can be optimised. Use of optimisation techniques such as using Octrees, Bitwise operations, Multi-threading and more.')">Learn More</button>
+    <button onclick="openModal('Low Level Optimisation', 'optimisation')">Learn More</button>
     <a href="https://github.com/yourusername/engineproject" target="_blank">GitHub</a>
   </div>
   <div class="project-card">
     <iframe src="https://www.youtube.com/embed/159Snxhoz6Q?si=wWlfYAk6Xnbi9xsz" frameborder="0" allowfullscreen></iframe>
-    <h1>Game AI</h1>
-    <p>Description</p>
+	<h1>Game AI</h1>
+	<p>A project focused on implementing game AI techniques. Features include a range of steering behaviors (Seek, Arrive, Flee, Evade, Wander, Collision Avoidance, Separation, Alignment, Cohesion), pathfinding algorithms (Dijkstra's and A*), and a state machine that enables AI agents to dodge enemies, shoot enemies, and search for health and ammo dynamically.</p>
     <button onclick="openModal('Game AI', 'Description')">Learn More</button>
     <a href="https://github.com/yourusername/shaderproject" target="_blank">GitHub</a>
   </div>
   <div class="project-card">
     <iframe src="https://www.youtube.com/embed/sjGtIusZ5WE?si=E-BaGri2nmGCVRWc" frameborder="0" allowfullscreen></iframe>
-    <h1>Physics</h1>
-    <p>In this project I make a physics renderer. In this I have implemented colliders, Sphere colliders and Axis-Aligned Bounding Box. I use these colliders to simulate collisions for the game objects in a resolve collision function, within this function I use a manifold to hold the data that is required for the collision calculations, I then apply an impulse force to both objects. Within the objects physics I calculate its velocity based on net force, mass and drag. I also have implemented gravity which is constant acceleration downwards. I would like to add plane colliders and conservation of angular momentum along with adding gameplay elements.</p>
-    <button onclick="openModal('Physics', 'In this project I make a physics renderer. In this I have implemented colliders, Sphere colliders and Axis-Aligned Bounding Box. I use these colliders to simulate collisions for the game objects in a resolve collision function, within this function I use a manifold to hold the data that is required for the collision calculations, I then apply an impulse force to both objects. Within the objects physics I calculate its velocity based on net force, mass and drag. I also have implemented gravity which is constant acceleration downwards. I would like to add plane colliders and conservation of angular momentum along with adding gameplay elements.')">Learn More</button>
+	<h1>Physics</h1>
+	<p>A project focused on creating a physics renderer that simulates collisions using different types of colliders (sphere, AABB). The system calculates object motion, applying forces like gravity, and includes future plans for advanced features like plane colliders and angular momentum conservation.</p>
+    <button onclick="openModal('Physics', '')">Learn More</button>
     <a href="https://github.com/Camo0o0n/DirectX11-Physics" target="_blank">GitHub</a>
   </div>
     <div class="project-card">
     <iframe src="https://www.youtube.com/embed/1jpDgHwn6PE?si=GpA9qsbdVFjz4unX" frameborder="0" allowfullscreen></iframe>
     <h1>WPF Terrain Generation Tool</h1>
-    <p>Description</p>
+	<p>A terrain generation tool developed using WPF, featuring terrain generation with the Diamond-Square algorithm. I also implemented a hydraulic erosion algorithm (by Nicholas McDonald) to simulate realistic terrain erosion and integrated terrain noise generation using FastNoiseLite for varied terrain features.</p>
     <button onclick="openModal('WPF Terrain Generation Tool', 'Description')">Learn More</button>
     <a href="https://github.com/yourusername/aipathfinding" target="_blank">GitHub</a>
   </div>
@@ -219,7 +246,7 @@
     document.getElementById('modalDesc').innerText = desc;
     document.getElementById('myModal').style.display = 'block';
   }
-
+ 
   function closeModal() {
     document.getElementById('myModal').style.display = 'none';
   }
