@@ -135,7 +135,7 @@
 	  border: 1px solid #888;
 	  width: 90%; /* make it take more width on smaller screens */
 	  max-width: 900px; /* increased from 600px to 900px */
-	  text-align: center;
+	  text-align: left;
 	  border-radius: 8px;
 	}
     .close {
@@ -150,6 +150,22 @@
     }
   </style>
 </head>
+
+<div id="renderingDesc" style="display: none;">
+  <p>For this project, the engine was modularly split into key systems that together formed the complete engine: Physics, Audio, Graphics, Text/UI, Build Engineering, Input, File I/O, and Optimizations (including Multi-Threading).</p>
+  <p>When the work was distributed, I took ownership of the Rendering system. My prior experience with DirectX 11 made me a good fit for this role, and it also allowed my teammates to focus on their own areas of interest and expertise.</p>
+  <p>Throughout the project, I developed valuable skills working with the PlayStation 5's proprietary graphics API. I also collaborated closely with the team to ensure the renderer met the needs of other systems, offering assistance and technical input across different areas — whether by sharing knowledge, providing a fresh perspective, or helping debug through "rubber ducking." Additionally, I was responsible for communicating the renderer’s requirements to other team members, such as the data and structures needed for successful rendering.</p>
+  <h3>Skills and Experience Gained:</h3>
+  <ul>
+    <li><strong>PlayStation 5 Graphics API</strong> development</li>
+    <li><strong>Real-time Rendering</strong> techniques</li>
+    <li><strong>Cross-team Collaboration</strong> and communication</li>
+    <li><strong>DirectX 11</strong> graphics programming</li>
+    <li><strong>Problem-solving</strong> and debugging (rubber ducking)</li>
+    <li><strong>Data pipeline design</strong> for rendering systems</li>
+  </ul>
+</div>
+
 <body>
 
 <header>
@@ -178,7 +194,7 @@
     <h1>Cross-Platform Engine Development (Rendering)</h1>
 	<p>A collaborative project between myself and six others to develop a custom game engine targeting multiple platforms, including PlayStation 5. I was responsible for the engine's rendering backend, implementing support for both DirectX 11 on PC and PlayStation's proprietary graphics API.</p>
     <div class="button-group">
-      <button onclick="openModal('Cross-Platform Engine Development (Rendering)', 'More details about the dissertation project...')">Learn More</button>
+      <button onclick="openModalWithId('renderingDesc', 'Cross-Platform Engine Development (Rendering)')">Learn More</button>
       <a disabled>Github</a>
     </div>
 	</div>
@@ -187,7 +203,7 @@
 	<h1>DirectX 11 Rendering</h1>
 	<p>A graphics rendering project focused on implementing modern rendering techniques using DirectX 11. Features include normal mapping for detailed surface lighting, a deferred rendering pipeline for efficient lighting, and post-processing effects to enhance visual.</p>
     <button onclick="openModal('DirectX 11 Rendering', 'More details about rendering...')">Learn More</button>
-    <a href="https://github.com/yourusername/unitygame" target="_blank">GitHub</a>
+    <a href="https://github.com/Camo0o0n/DirectX11-Rendering" target="_blank">GitHub</a>
   </div>
     <div class="project-card">
     <iframe src="https://www.youtube.com/embed/caICqWbAuPQ?si=_AZKvwmBnn9d64DP" frameborder="0" allowfullscreen></iframe>
@@ -197,15 +213,14 @@
       <button onclick="openModal('Dissertation Project', 'More details about the dissertation project...')">Learn More</button>
       <a href="https://github.com/Camo0o0n/Terrain_Generation_Tool" target="_blank">GitHub</a>
       <a href="https://1drv.ms/b/c/18880600ece13e37/EViVBhmBQmxApIx6u-aW-bsBw77rW7QLMNAoemTBnxrs6A?e=qaq8fT" target="_blank">Research Paper</a>
-	  
     </div>
 	</div>
   <div class="project-card">
     <iframe src="https://www.youtube.com/embed/lmTPDL-mSjw?si=uwldAQIdfqe36nmN" frameborder="0" allowfullscreen></iframe>
     <h1>Low Level Optimisation</h1>
-    <p>C++ physics simulation where the challenge was optimising the program to run more objects simultaneously. Used built in visual studio performance tools along with the PS4 Dev tools to identify areas that can be optimised. Use of optimisation techniques such as using Octrees, Bitwise operations, Multi-threading and more.</p>
+    <p>C++ physics simulation where the challenge was optimising the program to run more objects simultaneously. Used built in visual studio performance tools along with the PS4 Dev tools to identify areas that can be optimised. Use of optimisation techniques such as using Octrees, Multi-threading and more.</p>
     <button onclick="openModal('Low Level Optimisation', 'optimisation')">Learn More</button>
-    <a href="https://github.com/yourusername/engineproject" target="_blank">GitHub</a>
+    <a href="https://github.com/Camo0o0n/Low-Level-Optimisations" target="_blank">GitHub</a>
   </div>
   <div class="project-card">
     <iframe src="https://www.youtube.com/embed/159Snxhoz6Q?si=wWlfYAk6Xnbi9xsz" frameborder="0" allowfullscreen></iframe>
@@ -218,15 +233,15 @@
     <iframe src="https://www.youtube.com/embed/sjGtIusZ5WE?si=E-BaGri2nmGCVRWc" frameborder="0" allowfullscreen></iframe>
 	<h1>Physics</h1>
 	<p>A project focused on creating a physics renderer that simulates collisions using different types of colliders (sphere, AABB). The system calculates object motion, applying forces like gravity, and includes future plans for advanced features like plane colliders and angular momentum conservation.</p>
-    <button onclick="openModal('Physics', '')">Learn More</button>
+    <a disabled>Learn More</a>
     <a href="https://github.com/Camo0o0n/DirectX11-Physics" target="_blank">GitHub</a>
   </div>
     <div class="project-card">
     <iframe src="https://www.youtube.com/embed/1jpDgHwn6PE?si=GpA9qsbdVFjz4unX" frameborder="0" allowfullscreen></iframe>
     <h1>WPF Terrain Generation Tool</h1>
 	<p>A terrain generation tool developed using WPF, featuring terrain generation with the Diamond-Square algorithm. I also implemented a hydraulic erosion algorithm (by Nicholas McDonald) to simulate realistic terrain erosion and integrated terrain noise generation using FastNoiseLite for varied terrain features.</p>
-    <button onclick="openModal('WPF Terrain Generation Tool', 'Description')">Learn More</button>
-    <a href="https://github.com/yourusername/aipathfinding" target="_blank">GitHub</a>
+    <a disabled>Learn More</a>
+    <a href="https://github.com/Camo0o0n/WPF-Terrain-Generation-Tool" target="_blank">GitHub</a>
   </div>
   <!-- Repeat this block for other projects -->
 </section>
@@ -241,10 +256,15 @@
 </div>
 
 <script>
-  function openModal(title, desc) {
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalDesc').innerText = desc;
-    document.getElementById('myModal').style.display = 'block';
+  function openModalWithId(descId, title) {
+    const descHTML = document.getElementById(descId).innerHTML;
+    openModal(title, descHTML);
+  }
+
+  function openModal(title, descHTML) {
+  document.getElementById('modalTitle').innerText = title;
+  document.getElementById('modalDesc').innerHTML = descHTML;
+  document.getElementById('myModal').style.display = 'block';
   }
  
   function closeModal() {
