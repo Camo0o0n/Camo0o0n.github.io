@@ -166,6 +166,183 @@
   </ul>
 </div>
 
+<div id="directx11Desc" style="display: none;">
+  <p>
+    In this project, I integrated advanced rendering techniques including normal mapping, post-processing effects, and deferred rendering.
+  </p>
+
+  <h3>Normal Mapping</h3>
+  <p>
+    I implemented normal mapping to add surface detail without increasing geometry complexity. This involved:
+  </p>
+  <ul>
+    <li>Calculating tangents and bitangents per vertex.</li>
+    <li>Modifying the input layout to support this additional data.</li>
+    <li>Integrating normal map sampling into the pixel shader using a TBN matrix to accurately transform the sampled normal into tangent space.</li>
+  </ul>
+
+  <h3>Post-Processing Effects</h3>
+  <p>
+    I developed a post-processing pipeline, utilizing render targets and screen-space effects to enhance the visual appeal of the scene. Effects included:
+  </p>
+  <ul>
+    <li>Greyscale conversion using the NTSC formula.</li>
+    <li>Tinting with warm and cold colour adjustments.</li>
+    <li>Gaussian blur, applied via two passes for efficient blur implementation.</li>
+    <li>Depth of field (DoF) to simulate focus effects, based on camera depth.</li>
+  </ul>
+  <p>
+    These effects required managing GPU resources, handling texture read/write operations, and extracting depth information from the buffer for DoF calculations.
+  </p>
+
+  <h3>Deferred Rendering</h3>
+  <p>
+    To optimize lighting in complex scenes, I integrated deferred rendering, separating the geometry and lighting stages into distinct passes. This process involved:
+  </p>
+  <ul>
+    <li>Writing scene data (albedo, normals, position, specular) into multiple G-buffers during the geometry pass.</li>
+    <li>Performing lighting calculations in screen-space during the lighting pass, significantly reducing computational overhead for scenes with multiple light sources.</li>
+  </ul>
+  <p>
+    The implementation of deferred rendering required a different approach to rendering compared to a single pass.
+  </p>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>Normal Mapping: Added surface detail through tangent space normal maps.</li>
+    <li>Post-Processing Effects:
+      <ul>
+        <li>Greyscale</li>
+        <li>Warm/cold tinting</li>
+        <li>Gaussian blur</li>
+        <li>Depth of field</li>
+      </ul>
+    </li>
+    <li>Deferred Rendering:
+      <ul>
+        <li>Multi-pass pipeline with G-buffer outputs (Albedo, Normal, Specular, Position)</li>
+        <li>Efficient lighting computations in screen space</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Skills &amp; Knowledge Gained</h3>
+  <ul>
+    <li>Advanced shader programming (HLSL)</li>
+    <li>Tangent space mathematics and TBN matrix for normal mapping</li>
+    <li>Effective management of DirectX 11 resources (RTVs, SRVs, buffers)</li>
+    <li>Post-processing techniques using off-screen render targets</li>
+    <li>Understanding of deferred rendering pipelines</li>
+    <li>Depth buffer manipulation for advanced visual effects (DoF)</li>
+  </ul>
+</div>
+
+<div id="dissertationDesc" style="display: none;">
+  <p>
+    For my final year dissertation, I developed a custom terrain generation tool with a strong emphasis on usability and user-driven design. Over the course of the project, I conducted user testing with over <strong>70 participants</strong> across <strong>4 iterative rounds</strong>. Each round of feedback directly influenced tool improvements, including new features, UI redesigns, and workflow optimizations. 
+  </p>
+  <p>
+    To evaluate the tool's usability, I combined quantitative and qualitative data collection methods. Participants completed the industry-standard <strong>System Usability Scale (SUS)</strong> questionnaire, alongside other surveys and open feedback forms. This allowed me to measure usability improvements between each version and make data-driven design decisions.
+  </p>
+  <p>
+    Over the course of testing, <strong>SUS scores improved significantly</strong>, demonstrating measurable gains in usability and user satisfaction as the tool evolved.
+  </p>
+
+  <h3>Key Features:</h3>
+  <ul>
+    <li><strong>Brush-based terrain editing</strong> (raise, lower, smooth, flatten)</li>
+    <li><strong>Diamond-Square terrain generation</strong></li>
+    <li><strong>Noise-based terrain generation</strong> (procedural)</li>
+    <li><strong>Hydraulic erosion</strong> simulation for realistic terrain shaping</li>
+    <li><strong>Live preview</strong> of terrain changes</li>
+    <li>Adjustable <strong>brush size</strong> and <strong>strength</strong> controls</li>
+    <li><strong>Undo/Redo</strong> system for non-destructive editing</li>
+    <li><strong>Heightmap export</strong> for use in external engines/tools</li>
+    <li>Basic <strong>color painting</strong> directly on terrain</li>
+    <li><strong>Camera controls</strong> with orbit, pan, and zoom functionality</li>
+    <li><strong>UI panels</strong> for easy parameter adjustments</li>
+    <li><strong>Performance optimizations</strong> for real-time editing</li>
+  </ul>
+
+  <h3>Skills & Knowledge Gained:</h3>
+  <ul>
+    <li>User testing methodologies and usability evaluation</li>
+    <li>Data collection and analysis (SUS scoring, qualitative feedback)</li>
+    <li>Iterative development based on user feedback</li>
+    <li>Procedural terrain algorithms (Diamond-Square, Noise, Erosion)</li>
+    <li>Real-time tool development with performance considerations</li>
+    <li>UI/UX design principles for creative tools</li>
+  </ul>
+</div>
+
+<div id="lowleveDesc" style="display: none;">
+    <p>For this Low Level Platform Optimisation project, we were given a framework and had to make it run faster. Here’s what I did:</p>
+    <ul>
+        <li>I started by researching things like bitwise operations and ways to write more efficient code.</li>
+        <li>I used Visual Studio’s profiling tools to find out which parts of the code were slowing everything down the most.</li>
+    </ul>
+
+    <h3>Memory Pool:</h3>
+    <ul>
+        <li>I built a memory pool system to manage the cubes in the project.</li>
+        <li>I used a linked list-style structure where free bits of memory could be pointed to and reused.</li>
+        <li>This worked well because all the cubes were the same size, so I didn’t have to worry about alignment problems.</li>
+        <li>For big chunks of memory, using the pool gave better performance than constantly allocating and freeing memory on the heap.</li>
+    </ul>
+
+    <h4>Benefits of using memory pools:</h4>
+    <ul>
+        <li>They let you allocate and free memory fast, even with thousands of objects.</li>
+        <li>They help avoid memory leaks.</li>
+        <li>They are great for real-time systems where you want predictable performance.</li>
+        <li>They save space when you’re dealing with small objects.</li>
+        <li>The only downside is they need to be tuned properly based on how much memory you need.</li>
+    </ul>
+
+    <h3>Octree and Multi-threading:</h3>
+    <ul>
+        <li>I added multi-threading to speed up collision detection by spreading the work over multiple threads.</li>
+        <li>To make it even faster, I implemented an Octree system.</li>
+        <li>The Octree took me the longest to get right. I had to read up a lot to understand how they work.</li>
+        <li>I found sites like GeeksforGeeks helpful for the basics but ultimately I learnt the concept and tackled it how I thought was best even though I had to rewrite it many times.</li>
+        <li>I made my Octree recursive and structured it to be easier to manage.</li>
+        <li>The main Octree class has a root node that holds everything at first.</li>
+        <li>It splits objects into smaller child nodes based on their position, and keeps going until it hits a set max depth.</li>
+        <li>At runtime, it checks if objects are still inside their area — if they move out, it re-sorts them.</li>
+        <li>If an object doesn’t fit anywhere, it gets deleted.</li>
+    </ul>
+
+    <h4>Threading with the Octree:</h4>
+    <ul>
+        <li>I pulled out the objects from each "leaf" node and processed them in separate threads.</li>
+        <li>I had to be careful because passing vectors between recursive calls can get messy.</li>
+        <li>I solved this by wrapping the vectors in a struct, which made threading more stable.</li>
+        <li>I rewrote the Octree several times because the recursive stuff caused lots of bugs.</li>
+        <li>In the end, I got it working well, and the final version is much easier to read and optimise.</li>
+    </ul>
+
+    <h3>Performance Testing:</h3>
+    <ul>
+        <li>I tested different Octree depths: 0, 1, 2, and 3.</li>
+        <li>I found that depth 2 gave the best balance — it ran at a smooth 30fps with lots of objects.</li>
+        <li>Deeper levels started to hurt performance when there weren’t many objects on screen.</li>
+    </ul>
+
+    <h3>Porting to PlayStation 4:</h3>
+    <ul>
+        <li>As a group, we ported the framework over to PS4.</li>
+        <li>It went fairly smoothly, but we had to deal with PlayStation-specific quirks like avoiding multiple file inclusions and getting used to their threading system.</li>
+        <li>I noticed the PS4 gave full control over all its CPU cores, while on PC it felt more limited.</li>
+        <li>On PS4, some cores even seemed dedicated to certain tasks, which was interesting.</li>
+    </ul>
+
+    <h3>Further PC Optimisations:</h3>
+    <ul>
+        <li>I made sure to get everything working first before doing deeper optimisations (to avoid optimising too early).</li>
+        <li>One big win was speeding up the bounding box checks, which improved performance.</li>
+    </ul>
+</div>
+
 <body>
 
 <header>
@@ -202,7 +379,7 @@
     <iframe src="https://www.youtube.com/embed/tHOtdpHtKqs?si=ayKjA3NKisuRfVqb" frameborder="0" allowfullscreen></iframe>
 	<h1>DirectX 11 Rendering</h1>
 	<p>A graphics rendering project focused on implementing modern rendering techniques using DirectX 11. Features include normal mapping for detailed surface lighting, a deferred rendering pipeline for efficient lighting, and post-processing effects to enhance visual.</p>
-    <button onclick="openModal('DirectX 11 Rendering', 'More details about rendering...')">Learn More</button>
+    <button onclick="openModalWithId('directx11Desc', 'DirectX 11 Rendering')">Learn More</button>
     <a href="https://github.com/Camo0o0n/DirectX11-Rendering" target="_blank">GitHub</a>
   </div>
     <div class="project-card">
@@ -210,7 +387,7 @@
 	<h1>Dissertation Project: Usability in Terrain Generation Tools</h1>
 	<p>A research project exploring the impact of user feedback on the usability of game development tools. As part of this study, I developed a custom terrain generation tool, which served as the medium for evaluating how usability-focused design and user feedback can improve tool efficiency, learnability, and user satisfaction.</p>
     <div class="button-group">
-      <button onclick="openModal('Dissertation Project', 'More details about the dissertation project...')">Learn More</button>
+      <button onclick="openModalWithId('dissertationDesc', 'Dissertation Project: Usability in Terrain Generation Tools')">Learn More</button>
       <a href="https://github.com/Camo0o0n/Terrain_Generation_Tool" target="_blank">GitHub</a>
       <a href="https://1drv.ms/b/c/18880600ece13e37/EViVBhmBQmxApIx6u-aW-bsBw77rW7QLMNAoemTBnxrs6A?e=qaq8fT" target="_blank">Research Paper</a>
     </div>
@@ -219,14 +396,14 @@
     <iframe src="https://www.youtube.com/embed/lmTPDL-mSjw?si=uwldAQIdfqe36nmN" frameborder="0" allowfullscreen></iframe>
     <h1>Low Level Optimisation</h1>
     <p>C++ physics simulation where the challenge was optimising the program to run more objects simultaneously. Used built in visual studio performance tools along with the PS4 Dev tools to identify areas that can be optimised. Use of optimisation techniques such as using Octrees, Multi-threading and more.</p>
-    <button onclick="openModal('Low Level Optimisation', 'optimisation')">Learn More</button>
+    <button onclick="openModalWithId('lowleveDesc', 'Low Level Optimisation')">Learn More</button>
     <a href="https://github.com/Camo0o0n/Low-Level-Optimisations" target="_blank">GitHub</a>
   </div>
   <div class="project-card">
-    <iframe src="https://www.youtube.com/embed/159Snxhoz6Q?si=wWlfYAk6Xnbi9xsz" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/nkrBEoAIbLo" frameborder="0" allowfullscreen></iframe>
 	<h1>Game AI</h1>
-	<p>A project focused on implementing game AI techniques. Features include a range of steering behaviors (Seek, Arrive, Flee, Evade, Wander, Collision Avoidance, Separation, Alignment, Cohesion), pathfinding algorithms (Dijkstra's and A*), and a state machine that enables AI agents to dodge enemies, shoot enemies, and search for health and ammo dynamically.</p>
-    <button onclick="openModal('Game AI', 'Description')">Learn More</button>
+	<p>A project focused on implementing game AI techniques. Features include a range of steering behaviors (Seek, Arrive, Flee, Evade, Wander, Collision Avoidance, Separation, Alignment, Cohesion), pathfinding algorithms (Dijkstra, A*, and JPS), and a state machine that enables AI agents to dodge enemies, shoot enemies, and search for health and ammo dynamically.</p>
+    <a disabled>Learn More</a>
     <a href="https://github.com/yourusername/shaderproject" target="_blank">GitHub</a>
   </div>
   <div class="project-card">
