@@ -170,7 +170,7 @@
   <li>Flip status (for horizontal or vertical flipping)</li>
 </ul>
 
-<p>This structure covers 99% of use cases while keeping the API simple. By including animation data upfront, texture frame selection and manipulation can be handled in the shader using UV manipulation, avoiding bloat on the CPU side.</p>
+<p>This structure covers the majority of use cases while keeping the API simple. By including animation data upfront, texture frame selection and manipulation can be handled in the shader using UV manipulation, avoiding bloat on the CPU side.</p>
 
 <p>For more niche cases, such as debugging or custom visuals, a Draw Line function is provided, allowing lines to be drawn between any two positions in world space.</p>
 
@@ -202,7 +202,7 @@
 
   <h3>Post-Processing Effects</h3>
   <p>
-    I developed a post-processing pipeline, utilizing render targets and screen-space effects to enhance the visual appeal of the scene. Effects included:
+    I developed a post-processing pipeline, utilising render targets and screen-space effects to enhance the visual appeal of the scene. Effects included:
   </p>
   <ul>
     <li>Greyscale conversion using the NTSC formula.</li>
@@ -216,7 +216,7 @@
 
   <h3>Deferred Rendering</h3>
   <p>
-    To optimize and visually improve lighting, I integrated deferred rendering, separating the geometry and lighting stages into distinct passes. This process involved:
+    To optimise and visually improve lighting, I integrated deferred rendering, separating the geometry and lighting stages into distinct passes. This process involved:
   </p>
   <ul>
     <li>Writing scene data (albedo, normals, position, specular) into multiple G-buffers during the geometry pass.</li>
@@ -258,7 +258,7 @@
 
 <div id="dissertationDesc" style="display: none;">
   <p>
-    For my final year dissertation, I developed a custom terrain generation tool with a strong emphasis on usability and user-driven design. Over the course of the project, I conducted user testing with over <strong>70 participants</strong> across <strong>4 iterative rounds</strong>. Each round of feedback directly influenced tool improvements, including new features, UI redesigns, and workflow optimizations. 
+    For my final year dissertation, I developed a custom terrain generation tool with a strong emphasis on usability and user-driven design. Over the course of the project, I conducted user testing with over <strong>70 participants</strong> across <strong>4 iterative rounds</strong>. Each round of feedback directly influenced tool improvements, including new features, UI redesigns, and workflow optimisations. 
   </p>
   <p>
     To evaluate the tool's usability, I combined quantitative and qualitative data collection methods. Participants completed the industry-standard <strong>System Usability Scale (SUS)</strong> questionnaire, alongside other questions. This allowed me to measure usability improvements between each version and make data-driven design decisions.
@@ -280,7 +280,7 @@
     <li>Basic <strong>color painting</strong> directly on terrain</li>
     <li><strong>Camera controls</strong> with orbit, pan, and zoom functionality</li>
     <li><strong>UI panels</strong> for easy parameter adjustments</li>
-    <li><strong>Performance optimizations</strong> for real-time editing</li>
+    <li><strong>Performance optimisations</strong> for real-time editing</li>
   </ul>
 
   <h3>Skills & Knowledge Gained:</h3>
@@ -298,11 +298,7 @@
 	
 	<a href="https://github.com/Camo0o0n/Low-Level-Optimisations/blob/main/Octree.cpp">Octree</a>
 
-    <p>For this Low Level Platform Optimisation project, we were given a framework and had to make it run faster. Here’s what I did:</p>
-    <ul>
-        <li>I started by researching things like bitwise operations and ways to write more efficient code.</li>
-        <li>I used Visual Studio’s profiling tools to find out which parts of the code were slowing everything down the most.</li>
-    </ul>
+    <p>For this Low Level Platform Optimisation project, we were given a framework and had to make it run faster.
 
     <h3>Memory Pool:</h3>
     <ul>
