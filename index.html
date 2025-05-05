@@ -154,15 +154,15 @@
 <div id="renderingDesc" style="display: none;">
   <p>For this project, the engine was modularly split into key systems that together formed the complete engine: Physics, Audio, Graphics, Text/UI, Build Engineering, Input, File I/O, and Optimisations (including Multi-Threading).</p>
   <p>When the work was distributed, I took ownership of the Rendering system. My prior experience with DirectX 11 made me a good fit for this role, and it also allowed my teammates to focus on their own areas of interest and expertise.</p>
-  <p>Throughout the project, I developed valuable skills working with the PlayStation 5's proprietary graphics API. I also collaborated closely with the team to ensure the renderer met the needs of other systems, offering assistance and technical input across different areas — whether by sharing knowledge, providing a fresh perspective, or helping debug through "rubber ducking." Additionally, I was responsible for communicating the renderer’s requirements to other team members, such as the data and structures needed for successful rendering.</p>
+  <p>Throughout the project, I developed valuable skills working with the PlayStation 5's proprietary graphics API. I also collaborated closely with the team to ensure the renderer met the needs of other systems, offering assistance and technical input across different areas — whether by sharing knowledge, providing a fresh perspective, or helping debug through "rubber ducking." Additionally, I was responsible for communicating the renderer’s requirements to other team members, such as the data structures needed for successful rendering.</p>
   <h2>Rendering Pipeline Design</h2>
 <p>To keep rendering simple and efficient, I designed the pipeline around a minimal and consistent interface:</p>
 <ul>
-  <li>Rendering an object only requires providing a <strong>Transform</strong> class (containing position, scale, and rotation) and a colour.</li>
-  <li>Textures are managed through an <strong>ID system</strong>: when a texture is loaded, the renderer returns an integer ID. This allows objects to reference textures without embedding any API-specific code, improving portability and decoupling.</li>
+  <li>Rendering an object only requires providing a Transform class (containing position, scale, and rotation) and a colour.</li>
+  <li>Textures are managed through an ID system: when a texture is loaded, the renderer returns an integer ID. This allows objects to reference textures without embedding any API-specific code, improving portability and decoupling.</li>
 </ul>
 
-<p>For textured rendering, objects pass a <strong>Texture Data</strong> struct that includes:</p>
+<p>For textured rendering, objects pass a Texture Data struct that includes:</p>
 <ul>
   <li>Texture ID</li>
   <li>Animation flag (whether it's animated)</li>
@@ -172,7 +172,7 @@
 
 <p>This structure covers 99% of use cases while keeping the API simple. By including animation data upfront, texture frame selection and manipulation can be handled in the shader using UV manipulation, avoiding bloat on the CPU side.</p>
 
-<p>For more niche cases, such as debugging or custom visuals, a <strong>Draw Line</strong> function is provided, allowing lines to be drawn between any two positions in world space.</p>
+<p>For more niche cases, such as debugging or custom visuals, a Draw Line function is provided, allowing lines to be drawn between any two positions in world space.</p>
 
   
   <h3>Skills and Experience Gained:</h3>
@@ -211,19 +211,19 @@
     <li>Depth of field (DoF) to simulate focus effects, based on camera depth.</li>
   </ul>
   <p>
-    These effects required managing GPU resources, handling texture read/write operations, and extracting depth information from the buffer for DoF calculations.
+    These effects required managing GPU resources, handling texture operations, and extracting depth information from the buffer for DoF calculations.
   </p>
 
   <h3>Deferred Rendering</h3>
   <p>
-    To optimize lighting in complex scenes, I integrated deferred rendering, separating the geometry and lighting stages into distinct passes. This process involved:
+    To optimize and visually improve lighting, I integrated deferred rendering, separating the geometry and lighting stages into distinct passes. This process involved:
   </p>
   <ul>
     <li>Writing scene data (albedo, normals, position, specular) into multiple G-buffers during the geometry pass.</li>
     <li>Performing lighting calculations in screen-space during the lighting pass, significantly reducing computational overhead for scenes with multiple light sources.</li>
   </ul>
   <p>
-    The implementation of deferred rendering required a different approach to rendering compared to a single pass.
+    The implementation of deferred rendering required a different approach compared to a single pass.
   </p>
 
   <h3>Key Features</h3>
@@ -261,20 +261,20 @@
     For my final year dissertation, I developed a custom terrain generation tool with a strong emphasis on usability and user-driven design. Over the course of the project, I conducted user testing with over <strong>70 participants</strong> across <strong>4 iterative rounds</strong>. Each round of feedback directly influenced tool improvements, including new features, UI redesigns, and workflow optimizations. 
   </p>
   <p>
-    To evaluate the tool's usability, I combined quantitative and qualitative data collection methods. Participants completed the industry-standard <strong>System Usability Scale (SUS)</strong> questionnaire, alongside other surveys and open feedback forms. This allowed me to measure usability improvements between each version and make data-driven design decisions.
+    To evaluate the tool's usability, I combined quantitative and qualitative data collection methods. Participants completed the industry-standard <strong>System Usability Scale (SUS)</strong> questionnaire, alongside other questions. This allowed me to measure usability improvements between each version and make data-driven design decisions.
   </p>
   <p>
-    Over the course of testing, <strong>SUS scores improved significantly</strong>, demonstrating measurable gains in usability and user satisfaction as the tool evolved.
+    Over the course of testing, <strong>SUS scores improved</strong>, demonstrating measurable gains in usability and user satisfaction as the tool evolved.
   </p>
 
   <h3>Key Features:</h3>
   <ul>
     <li><strong>Brush-based terrain editing</strong> (raise, lower, smooth, flatten)</li>
+	<li>Adjustable <strong>brush size</strong> and <strong>strength</strong> controls</li>
     <li><strong>Diamond-Square terrain generation</strong></li>
     <li><strong>Noise-based terrain generation</strong> (procedural)</li>
     <li><strong>Hydraulic erosion</strong> simulation for realistic terrain shaping</li>
     <li><strong>Live preview</strong> of terrain changes</li>
-    <li>Adjustable <strong>brush size</strong> and <strong>strength</strong> controls</li>
     <li><strong>Undo/Redo</strong> system for non-destructive editing</li>
     <li><strong>Heightmap export</strong> for use in external engines/tools</li>
     <li>Basic <strong>color painting</strong> directly on terrain</li>
@@ -286,7 +286,7 @@
   <h3>Skills & Knowledge Gained:</h3>
   <ul>
     <li>User testing methodologies and usability evaluation</li>
-    <li>Data collection and analysis (SUS scoring, qualitative feedback)</li>
+    <li>Data collection and analysis (SUS scoring, qualitative and quantitative feedback)</li>
     <li>Iterative development based on user feedback</li>
     <li>Procedural terrain algorithms (Diamond-Square, Noise, Erosion)</li>
     <li>Real-time tool development with performance considerations</li>
@@ -383,6 +383,8 @@
     <li>C++</li>
     <li>C#</li>
 	<li>Computer Graphics</li>
+	<li>Problem-solving</li>
+	<li>OOP</li>
   </ul>
 </section>
 
@@ -431,14 +433,14 @@
   <div class="project-card">
     <iframe src="https://www.youtube.com/embed/sjGtIusZ5WE?si=E-BaGri2nmGCVRWc" frameborder="0" allowfullscreen></iframe>
 	<h1>Physics</h1>
-	<p>A project focused on creating a physics renderer that simulates collisions using different types of colliders (sphere, AABB). The system calculates object motion, applying forces like gravity, and includes future plans for advanced features like plane colliders and angular momentum conservation.</p>
+	<p>A project focused on creating a physics renderer that simulates collisions using different types of colliders (sphere, AABB). The system calculates object motion, applying forces like gravity, and includes future plans for advanced features like angular momentum conservation.</p>
     <a disabled>Learn More</a>
     <a href="https://github.com/Camo0o0n/DirectX11-Physics" target="_blank">GitHub</a>
   </div>
     <div class="project-card">
     <iframe src="https://www.youtube.com/embed/1jpDgHwn6PE?si=GpA9qsbdVFjz4unX" frameborder="0" allowfullscreen></iframe>
     <h1>WPF Terrain Generation Tool</h1>
-	<p>A terrain generation tool developed using WPF, featuring terrain generation with the Diamond-Square algorithm. I also implemented a hydraulic erosion algorithm (by Nicholas McDonald) to simulate realistic terrain erosion and integrated terrain noise generation using FastNoiseLite for varied terrain features.</p>
+	<p>A terrain generation tool developed using WPF, featuring terrain generation with the Diamond-Square algorithm and noise generation. I also implemented a hydraulic erosion algorithm (by Nicholas McDonald) to simulate realistic terrain erosion and allowed for exporting.</p>
     <a disabled>Learn More</a>
     <a href="https://github.com/Camo0o0n/WPF-Terrain-Generation-Tool" target="_blank">GitHub</a>
   </div>
