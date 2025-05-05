@@ -298,32 +298,34 @@
 	
 	<a href="https://github.com/Camo0o0n/Low-Level-Optimisations/blob/main/Octree.cpp">Octree</a>
 
-    <p>For this Low Level Platform Optimisation project, we were given a framework and had to make it run faster.
+    <p>For this Low Level Platform Optimisation project, we were given a framework and had to make it run faster. Steps taken:</p>
+    <ul>
+        <li>Researched bitwise operations and ways to write more efficient code.</li>
+        <li>Used Visual Studio’s profiling tools to discover which parts of the code that were using the most processing time.</li>
+    </ul>
 
     <h3>Memory Pool:</h3>
     <ul>
-        <li>I built a memory pool system to manage the cubes in the project.</li>
-        <li>I used a linked list-style structure where free bits of memory could be pointed to and reused.</li>
-        <li>This worked well because all the cubes were the same size, so I didn’t have to worry about alignment issues.</li>
+        <li>Built a memory pool system to manage the cubes in the project.</li>
+        <li>Used a linked list-style structure where free bits of memory could be pointed to and reused.</li>
+        <li>This worked well because all the cubes were the same size, which eliminated any alignment concerns.</li>
         <li>For big chunks of memory, using the pool gave better performance than constantly allocating and freeing memory on the heap.</li>
     </ul>
 
-    <h4>Benefits of using memory pools:</h4>
-    <ul>
-        <li>They let you allocate and free memory fast, even with thousands of objects.</li>
-        <li>They help avoid memory leaks.</li>
-        <li>They are great for real-time systems where you want predictable performance.</li>
-        <li>They save space when you’re dealing with small objects.</li>
-        <li>The only downside is they need to be tuned properly based on how much memory you need.</li>
-    </ul>
+    <!-- <h4>Benefits of using memory pools:</h4> -->
+    <!-- <ul> -->
+        <!-- <li>They let you allocate and free memory fast, even with thousands of objects.</li> -->
+        <!-- <li>They help avoid memory leaks.</li> -->
+        <!-- <li>They are great for real-time systems where you want predictable performance.</li> -->
+        <!-- <li>They save space when you’re dealing with small objects.</li> -->
+        <!-- <li>The only downside is they need to be tuned properly based on how much memory you need.</li> -->
+    <!-- </ul> -->
 
     <h3>Octree and Multi-threading:</h3>
     <ul>
-        <li>I added multi-threading to speed up collision detection by spreading the work over multiple threads.</li>
-        <li>To make it even faster, I implemented an Octree system.</li>
-        <li>The Octree took me the longest to get right. I had to read up a lot to understand how they work.</li>
-        <li>I found sites like GeeksforGeeks helpful for the basics but ultimately I learnt the concept and tackled it how I thought was best even though I had to rewrite it many times.</li>
-        <li>I made my Octree recursive and structured it to be easier to manage.</li>
+        <li>Added multi-threading to speed up collision detection by spreading the work over multiple threads.</li>
+        <li>Implemented an Octree system.</li>
+        <li>Made my Octree recursive and structured it to be easier to manage.</li>
         <li>The main Octree class has a root node that holds everything at first.</li>
         <li>It splits objects into smaller child nodes based on their position, and keeps going until it hits a set max depth.</li>
         <li>At runtime, it checks if objects are still inside their area — if they move out, it re-sorts them.</li>
@@ -332,10 +334,10 @@
 
     <h4>Threading with the Octree:</h4>
     <ul>
-        <li>I pulled out the objects from each "leaf" node and processed them in separate threads.</li>
-        <li>I had to be careful because passing vectors between recursive calls can get messy.</li>
-        <li>I solved this by wrapping the vectors in a struct, which made threading more stable.</li>
-        <li>I rewrote the Octree several times because the recursive stuff caused lots of bugs.</li>
+        <li>Pulled out the objects from each "leaf" node and processed them in separate threads.</li>
+        <li>Had to be careful because passing vectors between recursive calls can get messy.</li>
+        <li>Solved this by wrapping the vectors in a struct, which made threading more stable.</li>
+        <li>Rewrote the Octree several times because the recursive stuff caused lots of bugs.</li>
         <li>In the end, I got it working well, and the final version is much easier to read and optimise.</li>
     </ul>
 
