@@ -326,10 +326,8 @@
         <li>Added multi-threading to speed up collision detection by spreading the work over multiple threads.</li>
         <li>Implemented an Octree system.</li>
         <li>Made my Octree recursive and structured it to be easier to manage.</li>
-        <li>The main Octree class has a root node that holds everything at first.</li>
-        <li>It splits objects into smaller child nodes based on their position, and keeps going until it hits a set max depth.</li>
-        <li>At runtime, it checks if objects are still inside their area — if they move out, it re-sorts them.</li>
-        <li>If an object doesn’t fit anywhere, it gets deleted.</li>
+        <li>The Octree class was structured with a main node which linked to child nodes representing smaller regions</li>
+        <li>Checks were setup to be called at run time which validated that an object was still within a region if not it attempts to move it to correct node for a different region, if none are valid it deletes it.</li>
     </ul>
 
     <h4>Threading with the Octree:</h4>
@@ -343,8 +341,8 @@
 
     <h3>Performance Testing:</h3>
     <ul>
-        <li>I tested different Octree depths: 0, 1, 2, and 3.</li>
-        <li>I found that depth 2 gave the best balance — it ran at a smooth 30fps with lots of objects.</li>
+        <li>Tested different Octree depths: 0, 1, 2, and 3.</li>
+        <li>Found that depth 2 gave the best balance — it ran at a smooth 30fps with lots of objects.</li>
         <li>Deeper levels started to hurt performance when there weren’t many objects on screen.</li>
     </ul>
 
@@ -352,7 +350,7 @@
     <ul>
         <li>As a group, we ported the framework over to PS4.</li>
         <li>It went fairly smoothly, but we had to deal with PlayStation-specific quirks like avoiding multiple file inclusions and getting used to their threading system.</li>
-        <li>I noticed the PS4 gave full control over all its CPU cores, while on PC it felt more limited.</li>
+        <li>It was noticed that the PS4 gave full control over all its CPU cores, while on PC it felt more limited.</li>
         <li>On PS4, some cores even seemed dedicated to certain tasks, which was interesting.</li>
     </ul>
 
