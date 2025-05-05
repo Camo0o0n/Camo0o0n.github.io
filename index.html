@@ -325,18 +325,18 @@
     <ul>
         <li>Added multi-threading to speed up collision detection by spreading the work over multiple threads.</li>
         <li>Implemented an Octree system.</li>
-        <li>Made my Octree recursive and structured it to be easier to manage.</li>
+        <li>The Octree was recursive and structured it to be easier to manage.</li>
         <li>The Octree class was structured with a main node which linked to child nodes representing smaller regions</li>
-        <li>Checks were setup to be called at run time which validated that an object was still within a set region. If it was not an attempt was made to move it to correct node, otherwise it was removed.</li>
+        <li>Checks were setup to be called at run time which validated that an object was still within a set region. If it was not, an attempt was made to move it to correct node, otherwise it was removed.</li>
     </ul>
 
     <h4>Threading with the Octree:</h4>
     <ul>
         <li>Pulled out the objects from each "leaf" node and processed them in separate threads.</li>
-        <li>Had to be careful because passing vectors between recursive calls can get messy.</li>
-        <li>Solved this by wrapping the vectors in a struct, which made threading more stable.</li>
+        <li>Passing vectors between threads and recursive calls caused it to break</li>
+        <li>This was solved by wrapping the vectors in a struct, which made threading more stable.</li>
         <li>Rewrote the Octree several times because the recursive stuff caused lots of bugs.</li>
-        <li>In the end, I got it working well, and the final version is much easier to read and optimise.</li>
+        <li>In the end, it worked well, and the final version is much easier to read and understand.</li>
     </ul>
 
     <h3>Performance Testing:</h3>
@@ -349,15 +349,15 @@
     <h3>Porting to PlayStation 4:</h3>
     <ul>
         <li>As a group, we ported the framework over to PS4.</li>
-        <li>It went fairly smoothly, but we had to deal with PlayStation-specific quirks like avoiding multiple file inclusions and getting used to their threading system.</li>
-        <li>It was noticed that the PS4 gave full control over all its CPU cores, while on PC it felt more limited.</li>
-        <li>On PS4, some cores even seemed dedicated to certain tasks, which was interesting.</li>
+        <li>Ported smoothly, but we had to deal with PlayStation-specific quirks like avoiding multiple file inclusions and getting used to the threading system.</li>
+        <li>Noticed that the PS4 gave full control over all its CPU cores, while on PC CPU resources are more limited.</li>
+        <li>On PS4, CPU cores were dedicated to specific tasks/action.</li>
     </ul>
 
     <h3>Further PC Optimisations:</h3>
     <ul>
-        <li>I made sure to get everything working first before doing deeper optimisations (to avoid optimising too early).</li>
-        <li>One big win was speeding up the bounding box checks, which improved performance.</li>
+        <li>Made sure program was functional before optimisation.</li>
+        <li>One big optimisation was changing the bounding box check fuction, which improved performance significantly due the to frequency it was called.</li>
     </ul>
 </div>
 
