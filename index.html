@@ -158,7 +158,7 @@
   <h2>Rendering Pipeline Design</h2>
 <p>To keep rendering simple and efficient, I designed the pipeline around a minimal and consistent interface:</p>
 <ul>
-  <li>Rendering an object only requires providing a Transform class (containing position, scale, and rotation) and a colour.</li>
+  <li>Rendering an object only requires passing in a Transform value (containing position, scale, and rotation) and a colour.</li>
   <li>Textures are managed through an ID system: when a texture is loaded, the renderer returns an integer ID. This allows objects to reference textures without embedding any API-specific code, improving portability and decoupling.</li>
 </ul>
 
@@ -308,7 +308,7 @@
     <ul>
         <li>I built a memory pool system to manage the cubes in the project.</li>
         <li>I used a linked list-style structure where free bits of memory could be pointed to and reused.</li>
-        <li>This worked well because all the cubes were the same size, so I didn’t have to worry about alignment problems.</li>
+        <li>This worked well because all the cubes were the same size, so I didn’t have to worry about alignment issues.</li>
         <li>For big chunks of memory, using the pool gave better performance than constantly allocating and freeing memory on the heap.</li>
     </ul>
 
